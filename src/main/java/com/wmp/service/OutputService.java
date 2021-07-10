@@ -39,7 +39,7 @@ public class OutputService {
 
     private List<String> getEnglishesList(String convertData) {
         String englishes = convertData.replaceAll("[^a-zA-Z]", "");
-        return StringParseUtils.getEnglishesList(englishes);
+        return StringParseUtils.getEnglishes(englishes);
     }
 
     private List<String> getNumbersList(String convertData) {

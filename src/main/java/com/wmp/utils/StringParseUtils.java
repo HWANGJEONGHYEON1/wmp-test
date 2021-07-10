@@ -12,7 +12,7 @@ public class StringParseUtils {
                 .collect(Collectors.toList());
     }
 
-    public static List<String> getEnglishesList(String english) {
+    public static List<String> getEnglishes(String english) {
         return Arrays.stream(english.split(""))
                 .sorted((o1, o2) -> {
                     int res = o1.compareToIgnoreCase(o2);

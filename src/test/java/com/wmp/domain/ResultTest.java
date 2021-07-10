@@ -8,14 +8,12 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-
 class ResultTest {
 
     List<String> englishes;
     List<String> numbers;
     Result result;
+
     @BeforeEach
     void setup() {
         englishes = Arrays.asList(new String[]{"a", "b", "c"});

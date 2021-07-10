@@ -22,9 +22,9 @@ class OutputControllerTest {
 
     @Autowired
     private WebApplicationContext ctx;
-
     @Autowired
     ObjectMapper objectMapper;
+
     private MockMvc mockMvc;
 
     @BeforeEach

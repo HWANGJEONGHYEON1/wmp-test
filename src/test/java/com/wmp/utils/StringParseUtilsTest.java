@@ -8,10 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class StringParseUtilsTest {
-
 
     @Test
     @DisplayName("숫자를 리스트 변환한다.")
