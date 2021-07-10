@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>위메프 백엔드 과제</title>
+</head>
+<body>
+<h1>[입력]</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-10">
+            <label class="col-sm-2 label">URL</label>
+            <div class="col-sm-8">
+                <input type="text" id="searchUrl" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <label class="col-sm-2 label">TYPE</label>
+            <div class="col-sm-8">
+                <select id="type" class="form-control">
+                    <option value="EXCEPT_HTML">HTML 태그 제외</option>
+                    <option value="ALL">TEXT 전체</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <label class="col-sm-2 label">출력 단위 묶음</label>
+            <div class="col-sm-4">
+                <input id="outputUnit" type="number" class="form-control">
+            </div>
+        </div>
+    </div>
+    <button type="button" id="btnOutput" class="btn btn-default">출력</button>
+    <h1>[출력]</h1>
+    <div id="output"></div>
+</div>
+</body>
+<script src="/js/index.js"></script>
+
+</html>
