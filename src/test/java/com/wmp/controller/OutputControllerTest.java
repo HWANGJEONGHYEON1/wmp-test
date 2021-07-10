@@ -36,7 +36,7 @@ class OutputControllerTest {
     @DisplayName("값이 동일한지 테스트한다.")
     void checkOutputDTO() throws Exception {
         final MockHttpServletResponse response = mockMvc.perform(MockMvcRequestBuilders.get("/api/url/parse")
-                .param("url", "http://localhost:8090")
+                .param("url", "http://www.naver.com")
                 .param("type", "EXCEPT_HTML")
                 .param("outputUnit", "11"))
                 .andReturn().getResponse();
