@@ -8,8 +8,8 @@ import java.util.function.Supplier;
 
 public enum ParsingType {
 
-    EXCEPT_HTML(() -> new ExceptHtmlData()),
-    ALL(() -> new TextAllData());
+    EXCEPT_HTML(ExceptHtmlData::new),
+    ALL(TextAllData::new);
 
     private final Supplier<ParsingData> type;
 
