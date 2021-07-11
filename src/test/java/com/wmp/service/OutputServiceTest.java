@@ -26,6 +26,7 @@ class OutputServiceTest {
     SearchDTO dto;
     String url;
     String expectedData;
+    int outputUnit = 13;
 
     @BeforeEach
     void setUp() {
@@ -42,7 +43,7 @@ class OutputServiceTest {
     @Test
     @DisplayName("타입이 텍스트 전체일 때 몫을 구한다.")
     void allTextGetShare() {
-        dto = new SearchDTO(url, ParsingType.ALL, 13);
+        dto = new SearchDTO(url, ParsingType.ALL, outputUnit);
         given(restTemplate.getForObject(dto.getUrl(), String.class)).willReturn(expectedData);
         final OutputDTO parsing = outputService.parsing(dto);
 
@@ -52,7 +53,7 @@ class OutputServiceTest {
     @Test
     @DisplayName("타입이 HTML 태그 제외 일때 몫을 구한다.")
     void exceptHtmlGetShare() {
-        dto = new SearchDTO(url, ParsingType.EXCEPT_HTML, 13);
+        dto = new SearchDTO(url, ParsingType.EXCEPT_HTML, outputUnit);
         given(restTemplate.getForObject(dto.getUrl(), String.class)).willReturn(expectedData);
         final OutputDTO parsing = outputService.parsing(dto);
 
@@ -62,7 +63,7 @@ class OutputServiceTest {
     @Test
     @DisplayName("잘몰된 URL 들어올 시 예외처리한다.")
     void wrongUrl() {
-        dto = new SearchDTO("www.naver.com", ParsingType.EXCEPT_HTML, 13);
+        dto = new SearchDTO("www.naver.com", ParsingType.EXCEPT_HTML, outputUnit);
         Assertions.assertThatThrownBy(() -> outputService.parsing(dto))
                 .isInstanceOf(DomainNameException.class);
     }
