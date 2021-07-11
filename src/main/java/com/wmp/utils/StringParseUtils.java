@@ -14,9 +14,12 @@ public class StringParseUtils {
 
     public static List<String> getEnglishes(String english) {
         return Arrays.stream(english.split(""))
-                .sorted((o1, o2) -> {
-                    int res = o1.compareToIgnoreCase(o2);
-                    return (res == 0) ? o1.compareTo(o2) : res;
-                }).collect(Collectors.toList());
+                .sorted(StringParseUtils::compareTo)
+                .collect(Collectors.toList());
+    }
+
+    private static int compareTo(String o1, String o2) {
+        int res = o1.compareToIgnoreCase(o2);
+        return (res == 0) ? o1.compareTo(o2) : res;
     }
 }
