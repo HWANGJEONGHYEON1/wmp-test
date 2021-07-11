@@ -18,7 +18,6 @@ public class OutputController {
     @GetMapping(value = "/api/url/parse")
     public OutputDTO parseRequestUri(SearchDTO searchDTO) {
         log.info("===== parseRequestUri");
-        System.out.println(searchDTO.getOutputUnit());
         return outputService.parsing(searchDTO);
     }
 }

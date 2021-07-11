@@ -21,11 +21,8 @@ public class OutputService {
     public OutputDTO parsing(SearchDTO searchDTO) {
         validate(searchDTO);
         String data = restTemplate.getForObject(searchDTO.getUrl(), String.class);
-
         ParsingData parsingData = searchDTO.getType().get();
-
         String convertData = parsingData.convert(data);
-
         Result result = new Result(getEnglishesList(convertData), getNumbersList(convertData));
 
         return OutputDTO.of(convertData, searchDTO.getOutputUnit(), result.getResultString());

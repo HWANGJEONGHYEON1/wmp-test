@@ -11,7 +11,7 @@ public enum ParsingType {
     EXCEPT_HTML(() -> new ExceptHtmlData()),
     ALL(() -> new TextAllData());
 
-    private Supplier<ParsingData> type;
+    private final Supplier<ParsingData> type;
 
     ParsingType(Supplier<ParsingData> type) {
         this.type = type;
