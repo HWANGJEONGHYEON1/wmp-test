@@ -1,6 +1,5 @@
 package com.wmp.service;
 
-import com.wmp.domain.ConvertDataFactory;
 import com.wmp.controller.dto.OutputDTO;
 import com.wmp.controller.dto.SearchDTO;
 import com.wmp.domain.Result;
@@ -23,7 +22,8 @@ public class OutputService {
         validate(searchDTO);
         String data = restTemplate.getForObject(searchDTO.getUrl(), String.class);
 
-        ParsingData parsingData = ConvertDataFactory.create(searchDTO.getType());
+        ParsingData parsingData = searchDTO.getType().get();
+
         String convertData = parsingData.convert(data);
 
         Result result = new Result(getEnglishesList(convertData), getNumbersList(convertData));
